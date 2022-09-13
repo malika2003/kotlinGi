@@ -10,7 +10,8 @@ class MainActivity : AppCompatActivity() {
 
             lifecycleScope.launch{
                 viewModel.addNoteState.collect{
-
+                    adapter.setList(list)
+                    binding.rv.adapter= adapter
                 }
             }
 
